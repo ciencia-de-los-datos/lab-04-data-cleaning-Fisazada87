@@ -33,7 +33,7 @@ def clean_data():
 
     df["fecha_de_beneficio_1"] = pd.to_datetime(df.fecha_de_beneficio, format = "%Y/%m/%d", errors ="coerce")
     df["fecha_de_beneficio_2"] = pd.to_datetime(df.fecha_de_beneficio, format = "%d/%m/%Y", errors ="coerce")
-    df["fecha_de_beneficio"] = df.apply(lambda x: f"{x["fecha_de_beneficio_1"]} {x["fecha_de_beneficio_2"]}", axis = 1)
+    df["fecha_de_beneficio"] = df.apply(lambda x: f"{x['fecha_de_beneficio_1']} {x['fecha_de_beneficio_2']}", axis = 1)
     df["fecha_de_beneficio"] = df["fecha_de_beneficio"].str.replace("NaT ","")
     df["fecha_de_beneficio"] = df["fecha_de_beneficio"].str.replace(" NaT","")
     df["fecha_de_beneficio"]= pd.to_datetime(df["fecha_de_beneficio"])
